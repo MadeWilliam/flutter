@@ -1,0 +1,2 @@
+Create : 
+flutter create -a kotlin -i swift --androidx [project_name]
