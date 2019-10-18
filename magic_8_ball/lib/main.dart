@@ -30,7 +30,11 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Image.asset("images/ball1.png"),
+        child: FlatButton(
+          onPressed: () {
+            print("Clicked");
+          },
+          child: Image.asset("images/ball1.png")),
       ),
     );
   }
