@@ -20,12 +20,18 @@ class BallPage extends StatelessWidget {
   }
 }
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
+  @override
+  _HomeBodyState createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
-      child: Text("data"),
+      child: Center(
+        child: Image.asset("images/ball1.png"),
+      ),
     );
   }
 }
