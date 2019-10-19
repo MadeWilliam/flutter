@@ -48,7 +48,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  quizBrain.questionBank[questionNumber].questionText,
+                  quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -72,9 +72,8 @@ class _QuizPageState extends State<QuizPage> {
                   ),
                 ),
                 onPressed: () {
-                  setState(() {
                     bool correctAnswer =
-                        quizBrain.questionBank[questionNumber].questionAnswer;
+                        quizBrain.getCorrectAnswer();
 
                     if (correctAnswer == true) {
                       scoreKeeper.add(check);
@@ -84,7 +83,8 @@ class _QuizPageState extends State<QuizPage> {
                       print('User got it wrong');
                     }
 
-                    questionNumber++;
+                  setState(() {
+                    quizBrain.nextQuestion();
                   });
                 },
               ),
@@ -103,9 +103,8 @@ class _QuizPageState extends State<QuizPage> {
                   ),
                 ),
                 onPressed: () {
-                  setState(() {
                     bool correctAnswer =
-                        quizBrain.questionBank[questionNumber].questionAnswer;
+                        quizBrain.getCorrectAnswer();
 
                     if (correctAnswer == true) {
                       scoreKeeper.add(check);
@@ -115,7 +114,8 @@ class _QuizPageState extends State<QuizPage> {
                       print('User got it wrong');
                     }
 
-                    questionNumber++;
+                  setState(() {
+                    quizBrain.nextQuestion();
                   });
                 },
               ),
