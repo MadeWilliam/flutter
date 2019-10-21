@@ -42,9 +42,11 @@ class StoryBrain {
 //Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
   getStory() => _storyData[0].storyTitle;
 
-//TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
+//Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
+  getChoice1() => _storyData[0].choice1;
 
-//TODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
+//Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
+  getChoice2() => _storyData[0].choice2;
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
