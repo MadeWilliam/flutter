@@ -40,43 +40,43 @@ class StoryBrain {
 //Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
 //Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
-  String getStory() => _storyData[storyNumber].storyTitle;
+  String getStory() => _storyData[_storyNumber].storyTitle;
 
 //Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
-  String getChoice1() => _storyData[storyNumber].choice1;
+  String getChoice1() => _storyData[_storyNumber].choice1;
 
 //Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
-  String getChoice2() => _storyData[storyNumber].choice2;
+  String getChoice2() => _storyData[_storyNumber].choice2;
 
-//TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
 //Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
-  int storyNumber = 0;
+//Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
+  int _storyNumber = 0;
 
   void restart() {
-    storyNumber = 0;
+    _storyNumber = 0;
   }
 
 //Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
   void nextStory(int choiceNumber) {
 //Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
-    if (storyNumber == 0) {
+    if (_storyNumber == 0) {
       if (choiceNumber == 1) {
-        storyNumber = 2;
+        _storyNumber = 2;
       } else {
-        storyNumber = 1;
+        _storyNumber = 1;
       }
-    } else if (storyNumber == 1) {
+    } else if (_storyNumber == 1) {
       if (choiceNumber == 1) {
-        storyNumber = 2;
+        _storyNumber = 2;
       } else {
-        storyNumber = 3;
+        _storyNumber = 3;
       }
-    } else if (storyNumber == 2) {
+    } else if (_storyNumber == 2) {
       if (choiceNumber == 1) {
-        storyNumber = 5;
+        _storyNumber = 5;
       } else {
-        storyNumber = 4;
+        _storyNumber = 4;
       }
     } else {
 //Step 22 - In nbextStory() if the storyNumber is equal to 3 or 4 or 5, that means it's the end of the game and it should call a method called restart() that resets the storyNumber to 0.
