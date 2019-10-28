@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const activeCardColour = Color(0xFF1D1E33);
+const bottomContainerColour = Color(0xFFEB1555);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -19,12 +23,12 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      kColor: Color(0xFF1D1E33),
+                      colour: activeCardColour,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      kColor: Color(0xFF1D1E33),
+                      colour: activeCardColour,
                     ),
                   ),
                 ],
@@ -32,22 +36,27 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                kColor: Color(0xFF1D1E33),
+                colour: activeCardColour,
               ),
             ),
             Row(
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    kColor: Color(0xFF1D1E33),
+                    colour: activeCardColour,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    kColor: Color(0xFF1D1E33),
+                    colour: activeCardColour,
                   ),
                 ),
               ],
+            ),
+            Container(
+              color: bottomContainerColour,
+              width: double.infinity,
+              height: bottomContainerHeight,
             )
           ],
         ));
@@ -55,16 +64,16 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({@required this.kColor});
+  ReusableCard({@required this.colour});
 
-  final Color kColor;
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: kColor,
+        color: colour,
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
